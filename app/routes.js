@@ -3,6 +3,8 @@ module.exports = function(app) {
 	// server routes ===========================================================
 	// handle things like api calls
 	var Poll = require('./models/Poll');
+
+	// get all polls
 	app.get('/api/polls', function(req, res) {
 		Poll.find(function(err, polls) {
 			if (err) res.send(err);
@@ -10,6 +12,7 @@ module.exports = function(app) {
 		});
 	});
 
+	// create a poll
 	app.post('/api/polls', function(req, res) {
 		Poll.create({
 			title : req.body.title,
@@ -25,6 +28,7 @@ module.exports = function(app) {
 		});
 	});
 
+	// delete a poll
 	app.delete('/api/polls/:poll_id', function(req, res) {
 		Poll.remove({
 			_id : req.params.poll_id

@@ -1,0 +1,36 @@
+<div id="navbar" class="linear-layout" width="100">
+    <div class="menu-button" ng-click="showSideMenu()" width="10" v-font vw="8">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div width="80">
+        <div v-font vw="8" class="text-center">eMESS</div>
+    </div>
+    <div width="10">
+        <img id="logo" class="img-responsive" src="images/logo-sm.png" alt="Logo" width="8"/>
+    </div>
+</div>
+
+<div id="side-menu">
+    <div class="content" v-font vh="2.5">
+        <div class="banner">
+            <img src="images/default-pp.png" alt="Profile Image" class="img-circle profile-pic img-responsive"/>
+            <div class="user-info">
+                <p class="name">{{user.name}}</p>
+                <p class="email">{{user.profile.email}}</p>
+            </div>
+        </div>
+        <div class="pages-container">
+            <a class="menu-page" href="#/home">
+                <i class="icon fa fa-home" v-font vh="4"></i>
+                <span class="label" v-font vh="2.5">Home</span>
+            </a>
+            <div ng-repeat="page in pages">
+                <a class="menu-page" href="#/{{page.url}}">
+                    <i class="icon fa fa-{{page.icon}}" v-font vh="4"></i>
+                    <span class="label" v-font vh="2.5">{{page.url.replace('-',' ').capitalize()}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="backdrop"></div>
+</div>
