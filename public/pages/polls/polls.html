@@ -1,0 +1,22 @@
+<div class="content">
+
+    <h2>Polls</h2>
+
+    <div>
+        <p><label>Title: <input type="text"></label></p>
+        <p>Choices: </p>
+        <p><label>Title: <input type="text"></label></p>
+        <p><button class="btn btn-success" ng-click="polls.createPoll()">Create a New Poll</button></p>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="poll in polls.polls">
+            <h4>{{poll.title}}</h4>
+            <ul ng-if="poll.choices">
+                <li ng-repeat="choice in poll.choices">{{choice.title}}</li>
+            </ul>
+            <p class="text-danger"><a href="javascript:void(0)" ng-click="polls.deletePoll(poll._id)">Delete</a></p>
+        </li>
+    </ul>
+
+</div>

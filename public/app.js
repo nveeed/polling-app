@@ -3,13 +3,15 @@
 angular.module('myApp', [
     'ui.router',
     'CustomDirectives',
-    'Home'// append more modules here
+    'Home',
+	'Polls'// append more modules here
 ]).
 config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
 }]);
 
 // @codekit-append "js/custom-directives.js"
 // @codekit-append "js/developer.js"
 // @codekit-append "pages/home/home.js"
+// @codekit-append "pages/polls/polls.js"
 // append more files here
